@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e9bb69dc7f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <div id="signin">
+
+        <h1>Create an account</h1>
+
+        <form action="" id="form">
+          <input type="text" placeholder="Email address" class="inputs" id="email">
+          <input type="text" placeholder="First name" class="inputs" id="firstname">
+          <input type="text" placeholder="Last name" class="inputs" id="lastname">
+          <input type="password" placeholder="Password" class="inputs" id="password">
+          
+          <div id="checkbox">
+              <input type="checkbox" class="check" ><p id="para">Keep me signed in</p>
+          </div>
+          
+          <p class="para2">Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not select this on shared devices</p>
+          <p class="para2">By signing in, I agree to the Travelocity <a href="">Terms and Conditions</a>   and <a href="">Privacy Staement.</a></p>
+          
+          <input id="submit" type="submit"  value="submit" />
+          
+          <a href="" id="foreget_pass">Forget password?</a>
+          <p class="bottom">Already have an account? <a href="signin.html" id="create_one">Sign in</a></p>
+          <p class="bottom">or continue with</p>
+          
+          <div id="icon">
+              <i class="fa-brands fa-apple"></i>
+              <i class="fa-brands fa-square-facebook"></i> 
+          </div>
+      
+      </form>
+     </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit",formsubmit)
+
+
+function formsubmit(){
+    event.preventDefault()
+
+    fromObj={
+        personEmail:form.email.value,
+        personMobile:form.firstname.value,
+        personpass:form.lastname.value,
+        personpassword:form.password.value,
+    };
+  
+   if (fromObj.personpass == fromObj.personpass)
+    {
+        window.location.href="signin.html";
+    }
+    else {
+        alert ("Password Not Match");
+    }
+  
+  localStorage.setItem("userdata",JSON.stringify(fromObj));
+ }
+</script>
